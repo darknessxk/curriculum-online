@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {Fingerprint} from "./Fingerprint";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const hwid = Fingerprint();
+
+
+    return (
+        <div className="App">
+            <header>
+                <ul>
+                    <li>Intro</li>
+                    <li>Pretenção</li>
+                    <li>Trabalhos</li>
+                    <li>Estudos</li>
+                    <li>Meta</li>
+                </ul>
+            </header>
+
+            <main>
+                <div id="Intro">
+                    Intro
+                </div>
+                <div id="Pretencao">
+                    Pretencao
+                </div>
+                <div id="Trabalhos">
+                    Trabalhos
+                </div>
+                <div id="Estudos">
+                    Estudos
+                </div>
+                <div id="Metas">
+                    Metas
+                </div>
+            </main>
+
+            <footer>
+                <span>Curriculum Online feito com <span className="Heart">♥</span> por um programador com insonia</span>
+            </footer>
+        </div>
+    );
 }
 
 export default App;
