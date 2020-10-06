@@ -1,1 +1,6 @@
-export type StudyData = {}
+export type StudyData = {
+    Name: string;
+    Description: string;
+    StartedAt: Date;
+    EndedAt: Date;
+}
