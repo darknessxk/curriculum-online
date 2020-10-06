@@ -12,6 +12,14 @@ export abstract class LanguageBase {
         return item ?? { name: "error", value: "Translation not found" };
     }
 
+    getDateFormat(): string {
+        return "yyyy/mm/dd";
+    }
+
+    getCurrencyFormat(value: Number): string {
+        return `U$ ${value.toFixed(2)}`;
+    }
+
     abstract getName(): string;
     abstract getId(): string;
 }

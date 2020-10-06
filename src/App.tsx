@@ -18,7 +18,56 @@ function App() {
         }}>
             <CurriculumContext.Provider value={{
                 Curriculum: {
-                    Works: [],
+                    Works: [
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.default",
+                            Position: "Engenheiro de software",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.junior",
+                            Position: "Analista de softwares",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.senior",
+                            Position: "Qualidade de produtos",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.director",
+                            Position: "Marketing",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.junior",
+                            Position: "Software Developer",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                        {
+                            Name: "Test",
+                            Hierarchy: "profileWork.hierarchy.senior",
+                            Position: "Software Developer",
+                            Description: "Testando...",
+                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            StartedAt: new Date(Date.parse('2020-06-01'))
+                        },
+                    ],
                     Metas: [],
                     Studies: [],
                     Salary: 8600,

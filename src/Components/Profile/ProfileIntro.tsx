@@ -3,6 +3,7 @@ import {ButtonBase, createStyles, Grid, Link, Paper, Theme, Typography} from "@m
 import {makeStyles} from "@material-ui/core/styles";
 import {PersonData} from "./Structures/PersonData";
 import {AppContext} from "../../Context/AppContext";
+import { formatDate } from "../../Utils/DateHelper";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -64,11 +65,11 @@ export function ProfileIntro(props: IIntroProps) {
                         {ProfileInfo(language.getItem("profileIntro.name").value, <Typography variant="caption">{Name}</Typography>)}
                         {ProfileInfo(language.getItem("profileIntro.sex").value, <Typography variant="caption">{language.getItem(Sex).value}</Typography>)}
                         {ProfileInfo(language.getItem("profileIntro.birthDate").value,
-                            <Typography variant="caption">{Birthday.getDay().toString().padStart(2, "0") + "/" + Birthday.getMonth().toString().padStart(2, "0") + "/" + Birthday.getFullYear()}</Typography>
+                            <Typography variant="caption">{formatDate(language.getDateFormat(), Birthday)}</Typography>
                         )}
                         {ProfileInfo(language.getItem("profileIntro.salary").value,
                             <Typography variant="caption">
-                                {language.getItem("price.sign").value}: {Salary.toFixed(2)}
+                                {language.getCurrencyFormat(Salary)}
                             </Typography>)}
                     </Grid>
 

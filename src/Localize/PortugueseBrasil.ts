@@ -17,6 +17,16 @@ export class PortugueseBrasil extends LanguageBase {
             { name: "profileIntro.lives", value: "Moradia" },
             { name: "profileIntro.sectionLabel", value: "Introdução" },
             { name: "profileIntro.salary", value: "Pretensão" },
+            { name: "profileWork.section.title", value: "Experiencias" },
+            { name: "profileWork.startedAt", value: "Começou em" },
+            { name: "profileWork.leaveAt", value: "Saiu em" },
+            { name: "profileWork.description", value: "O que fazia?" },
+            { name: "profileWork.position", value: "Cargo" },
+            { name: "profileWork.hierarchy.default", value: "Pleno" },
+            { name: "profileWork.hierarchy.junior", value: "Junior" },
+            { name: "profileWork.hierarchy.senior", value: "Senior" },
+            { name: "profileWork.hierarchy.director", value: "Diretor" },
+            { name: "profileWork.hierarchy.none", value: "" },
             { name: "mainPage.footerLabel", value: "Feito com ♥ por um programador com insonia" },
             { name: "header.languageBtnText", value: "Idioma" },
             { name: "person.sex.Male", value: "Masculino" },
@@ -24,7 +34,6 @@ export class PortugueseBrasil extends LanguageBase {
             { name: "person.sex.NonBinary", value: "Não binário" },
             { name: "person.sex.Transsexual", value: "Transsexual" },
             { name: "person.sex.None", value: "Não informado" },
-            { name: "price.sign", value: "R$" },
         ];
     }
 
@@ -34,5 +43,13 @@ export class PortugueseBrasil extends LanguageBase {
 
     getName(): string {
         return "Português-Brasil";
+    }
+
+    getDateFormat(): string {
+        return "dd/mm/yyyy";
+    }
+
+    getCurrencyFormat(value: Number): string {
+        return `R$ ${value.toFixed(2)}`;
     }
 }
