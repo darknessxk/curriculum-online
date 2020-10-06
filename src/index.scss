@@ -1,3 +1,25 @@
+$ScrollbarColorsBackground: unset;
+$ScrollbarColorsZone: unset;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $ScrollbarColorsBackground $ScrollbarColorsZone;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: $ScrollbarColorsZone;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $ScrollbarColorsBackground;
+  border-radius: 20px;
+  border: 3px solid $ScrollbarColorsZone;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;

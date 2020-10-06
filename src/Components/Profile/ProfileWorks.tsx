@@ -4,6 +4,7 @@ import {WorkData} from "./Structures/WorkData";
 import {makeStyles} from "@material-ui/core/styles";
 import {AppContext} from "../../Context/AppContext";
 import {formatDate} from "../../Utils/DateHelper";
+import {generateRandomString} from "../../Utils/StringHelper";
 
 interface IWorkProps {
     Works: WorkData[];
@@ -11,7 +12,14 @@ interface IWorkProps {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(2)
+    },
+    cardsRoot: {
+        padding: theme.spacing(1),
+    },
+    card: {
+        minHeight: '256px',
+        maxHeight: '256px'
     },
     bullet: {
         display: 'inline-block',
@@ -21,31 +29,33 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     title: {
         fontSize: 14,
     },
-    pos: {
-        marginBottom: 12,
+    textTitle: {
+        margin: 'auto',
+        textAlign: 'center'
     },
-
-    typography: {
-        h4: {
-
-        }
-    }
 }));
 
 export function ProfileWork(props: IWorkProps) {
     const { Works } = props;
     const classes = useStyles();
 
+    if (Works === undefined)
+        return null;
+
+    if (Works.length === 0)
+        return null;
+
     return (<AppContext.Consumer>
         {({language}) => language !== undefined ? (
-            <Grid container id="works">
-                <Grid item xs={12}>
+            <Grid container className={classes.root} id="works">
+                <Grid item xs={12} key={`${generateRandomString(24, ['Numbers', 'Alpha'])}`}>
                     <Typography align="center" variant="h4">{language.getItem("profileWork.section.title").value}</Typography>
                 </Grid>
-                {Works.map(({StartedAt, Name, Position, Hierarchy, EndedAt, Description}) => (<Grid item xs={4} className={classes.root}>
-                    <Card>
+                {Works.map(({StartedAt, Name, Position, Hierarchy, EndedAt, Description, Current}) => (
+                <Grid item xs={4} className={classes.cardsRoot} key={`${generateRandomString(24, ['Numbers', 'Alpha'])}-${Name}`}>
+                    <Card className={classes.card}>
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
+                            <Typography align="center" gutterBottom variant="h5" component="h2">
                                 {Name}
                             </Typography>
 
@@ -56,7 +66,7 @@ export function ProfileWork(props: IWorkProps) {
                             </Typography>
 
                             <Typography gutterBottom variant="caption" component="h2">
-                                {language.getItem("profileWork.leaveAt").value}: {formatDate(language.getDateFormat(), EndedAt)}
+                                {language.getItem(Current ? "profileWork.current" : "profileWork.leaveAt").value}{ Current ? null : `: ${formatDate(language.getDateFormat(), EndedAt ?? new Date())}`}
                             </Typography>
 
                             <Typography gutterBottom variant="caption" component="h2">

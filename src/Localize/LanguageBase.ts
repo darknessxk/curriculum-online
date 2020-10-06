@@ -9,7 +9,14 @@ export abstract class LanguageBase {
         if (item === undefined)
             item = this.items.filter(item => item.name === "placeholder").pop();
 
-        return item ?? { name: "error", value: "Translation not found" };
+        if (item === undefined)
+            item = { name: "error", value: "Translation not found" };
+
+        if (item.name === "error") {
+            console.log("Translation error missing key:", name)
+        }
+
+        return item;
     }
 
     getDateFormat(): string {

@@ -5,7 +5,6 @@ import {
     Toolbar,
 } from "@material-ui/core";
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
-import MoneyIcon from "@material-ui/icons/AttachMoney";
 import WorkIcon from "@material-ui/icons/Work";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
@@ -18,28 +17,24 @@ export function Header() {
             <header>
                 <AppBar>
                     <Toolbar>
-                        <IconButton>
+                        <IconButton key="intro">
                             <AssignmentIndIcon />
                         </IconButton>
 
-                        <IconButton>
-                            <MoneyIcon />
-                        </IconButton>
-
-                        <IconButton>
+                        <IconButton key="works">
                             <WorkIcon />
                         </IconButton>
 
-                        <IconButton>
+                        <IconButton key="studies">
                             <MenuBookIcon />
                         </IconButton>
 
-                        <IconButton>
+                        <IconButton key="metas">
                             <AssignmentTurnedInIcon />
                         </IconButton>
 
-                        <IconButton>
-                            <TranslateIcon onClick={() => alert("to be implemented")} />
+                        <IconButton key="languages" onClick={() => alert("to be implemented")}>
+                            <TranslateIcon />
                         </IconButton>
                     </Toolbar>
                 </AppBar>

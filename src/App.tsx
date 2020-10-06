@@ -24,7 +24,7 @@ function App() {
                             Hierarchy: "profileWork.hierarchy.default",
                             Position: "Engenheiro de software",
                             Description: "Testando...",
-                            EndedAt: new Date(Date.parse('2020-12-01')),
+                            Current: true,
                             StartedAt: new Date(Date.parse('2020-06-01'))
                         },
                         {
@@ -68,9 +68,37 @@ function App() {
                             StartedAt: new Date(Date.parse('2020-06-01'))
                         },
                     ],
+                    Studies: [
+                        {
+                            Description: "Curso superior",
+                            Name: "Ciências da computação",
+                            EndedAt: new Date(Date.parse('2018-01-01')),
+                            StartedAt: new Date(Date.parse('2012-01-01')),
+                            Institute: "Universidade de Washington",
+                            CertificationUrl: "#",
+                            Graduation: "profileStudy.graduation.bachelor"
+                        },
+                        {
+                            Description: "Curso superior",
+                            Name: "Ciências da computação",
+                            EndedAt: new Date(Date.parse('2018-01-01')),
+                            StartedAt: new Date(Date.parse('2012-01-01')),
+                            Institute: "Universidade de Washington",
+                            CertificationUrl: "#",
+                            Graduation: "profileStudy.graduation.bachelor"
+                        },
+                        {
+                            Description: "Curso superior",
+                            Name: "Ciências da computação",
+                            EndedAt: new Date(Date.parse('2018-01-01')),
+                            StartedAt: new Date(Date.parse('2012-01-01')),
+                            Institute: "Universidade de Washington",
+                            CertificationUrl: "#",
+                            Graduation: "profileStudy.graduation.bachelor"
+                        }
+                    ],
                     Metas: [],
-                    Studies: [],
-                    Salary: 8600,
+                    Salary: 999999,
                     Person: {
                         Birthday: new Date(Date.parse("1994-09-20")),
                         ProfilePicture: "https://via.placeholder.com/256x256",
