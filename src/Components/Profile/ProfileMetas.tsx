@@ -8,6 +8,6 @@ interface IMetasProps {
 
 export function ProfileMetas(props: IMetasProps) {
     return (<Container id="metas">
-        <Typography>Metas</Typography>
+        <Typography />
     </Container>);
 }

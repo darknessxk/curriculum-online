@@ -54,7 +54,7 @@ export function ProfileStudies(props: IStudiesProps) {
                                       Graduation,
                                       Current
                                   }) => (
-                        <TimelineItem>
+                        <TimelineItem key={generateRandomString(24, ['Alpha', 'Numbers'])}>
                             <TimelineOppositeContent>
                                 <Typography variant="body2" color="textSecondary">
                                     {language.getItem("profileStudy.startedAt").value} <b>{formatDate('mm/yyyy', StartedAt)}</b>

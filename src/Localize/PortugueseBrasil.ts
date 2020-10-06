@@ -27,7 +27,7 @@ export class PortugueseBrasil extends LanguageBase {
             { name: "profileWork.hierarchy.director", value: "Diretor" },
             { name: "profileWork.hierarchy.none", value: "" },
             { name: "profileWork.current", value: "Atual" },
-            { name: "profileStudy.section.title", value: "Estudos" },
+            { name: "profileStudy.section.title", value: "Qualificações" },
             { name: "profileStudy.current", value: "Termina em" },
             { name: "profileStudy.startedAt", value: "Começou em" },
             { name: "profileStudy.endedAt", value: "Terminou em" },
